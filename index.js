@@ -8,8 +8,8 @@ import { Command } from "commander";
 import readline from "readline";
 
 const rl = readline.createInterface({
-  input: process.stdin, // ввод из стандартного потока
-  output: process.stdout, // вывод в стандартный поток
+  input: process.stdin,
+  output: process.stdout,
 });
 
 const program = new Command();
@@ -54,7 +54,6 @@ function invokeAction({ action, id, name, email, phone }) {
 }
 
 invokeAction(argv);
-// console.log("argv", argv);
 
 //to run use this pattern:
 //node index.js -a list
