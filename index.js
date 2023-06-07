@@ -36,21 +36,28 @@ function invokeAction({ action, id, name, email, phone }) {
       break;
 
     case "add":
-      const newContact = {
+      addContact({
         name,
         email,
         phone,
-      };
-      addContact(newContact);
+      });
       break;
 
     case "remove":
       removeContact(id);
       break;
 
+    case "help":
+      console.log("To run: node index.js /n");
+      console.log("actions: list/get/add/remove /n");
+      console.log("options: -a/action -i/id -n/name -e/email -p/phone /n");
+      break;
+
     default:
       console.warn("\x1B[31m Unknown action type!");
   }
+
+  rl.close();
 }
 
 invokeAction(argv);
