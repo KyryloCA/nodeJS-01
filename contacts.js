@@ -60,8 +60,7 @@ async function getContactById(contactId) {
 async function removeContact(contactId) {
   try {
     const contactList = await readDB();
-    // const rawData = await fs.readFile(contactsPath);
-    // const parsedcontactList = JSON.parse(rawData.toString());
+
     const isInclude = contactList.find(
       (contactOBJ) => contactOBJ.id === contactId
     );
